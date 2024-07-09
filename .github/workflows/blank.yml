@@ -25,8 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      # Inject most recent tag into environment as VERSION
+      - name: Get the version from tag
+        id: version
+        run: echo git describe --tags --abbrev=0 >> $GITHUB_ENV
+
       - uses: GeoWerkstatt/create-jira-release@v1
         with:
           jira-project-key: 'KAN'
           jira-automation-webhook: ${{ secrets.JIRA_AUTOMATION_WEBHOOK }}
-          build-version: 'v1'
+          build-version: v${{ env.VERSION }}
