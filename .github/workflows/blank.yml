@@ -15,23 +15,28 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  megalinter:
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      # Inject most recent tag into environment as VERSION
-      - name: Get the version from tag
-        id: version
-        run: echo "VERSION=$(shell git describe --tags --abbrev=0)" >> $GITHUB_ENV
+      - name: MegaLinter
+        id: ml
+        uses: oxsecurity/megalinter/flavors/go@v7.10.0
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: GeoWerkstatt/create-jira-release@v1
+      - name: Upload MegaLinter artifacts
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
         with:
-          jira-project-key: 'KAN'
-          jira-automation-webhook: ${{ secrets.JIRA_AUTOMATION_WEBHOOK }}
-          build-version: v${{ env.VERSION }}
+          name: MegaLinter reports
+          path: |
+            megalinter-reports
+            mega-linter.log
