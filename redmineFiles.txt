@@ -1,0 +1,50 @@
+root@ip-172-31-12-165:/newvolume# find /newvolume/ -iname '*redmine*'
+
+/newvolume/opt/bitnami/config/logrotate/logrotate.d/redmine.conf
+/newvolume/opt/bitnami/mysql/data/bitnami_redmine
+/newvolume/opt/bitnami/use_redmine
+/newvolume/opt/bitnami/licenses/redmine.txt
+/newvolume/opt/bitnami/apache2/htdocs/img/redmine.png
+/newvolume/opt/bitnami/apps/redmine
+/newvolume/opt/bitnami/apps/redmine/htdocs/config/initializers/30-redmine.rb
+/newvolume/opt/bitnami/apps/redmine/htdocs/test/unit/lib/redmine
+/newvolume/opt/bitnami/apps/redmine/htdocs/test/unit/lib/redmine_test.rb
+/newvolume/opt/bitnami/apps/redmine/htdocs/test/extra/redmine_pm
+/newvolume/opt/bitnami/apps/redmine/htdocs/test/integration/lib/redmine
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/redmine
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/redmine/scm/adapters/mercurial/redminehelper.py
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/tasks/redmine.rake
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/generators/redmine_plugin
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/generators/redmine_plugin/redmine_plugin_generator.rb
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/generators/redmine_plugin_model
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/generators/redmine_plugin_model/redmine_plugin_model_generator.rb
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/generators/redmine_plugin_controller
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/generators/redmine_plugin_controller/redmine_plugin_controller_generator.rb
+/newvolume/opt/bitnami/apps/redmine/htdocs/lib/redmine.rb
+/newvolume/opt/bitnami/apps/redmine/htdocs/extra/svn/Redmine.pm
+/newvolume/opt/bitnami/apps/redmine/htdocs/plugins/redmine_monitoring_controlling
+/newvolume/opt/bitnami/apps/redmine/htdocs/plugins/redmine_ldap_sync
+/newvolume/opt/bitnami/apps/redmine/htdocs/plugins/redmine_issue_templates
+/newvolume/opt/bitnami/apps/redmine/htdocs/plugins/redmine_issue_templates/app/views/settings/_redmine_issue_templates.html.erb
+/newvolume/opt/bitnami/apps/redmine/htdocs/public/plugin_assets/redmine_monitoring_controlling
+/newvolume/opt/bitnami/apps/redmine/htdocs/public/plugin_assets/redmine_emojibutton
+/newvolume/opt/bitnami/apps/redmine/htdocs/public/plugin_assets/redmine_ldap_sync
+/newvolume/opt/bitnami/apps/redmine/htdocs/public/plugin_assets/redmine_issue_templates
+/newvolume/opt/bitnami/apps/redmine/htdocs/public/plugin_assets/redmine_ckeditor
+/newvolume/opt/bitnami/apps/redmine/htdocs/public/plugin_assets/redmine_ckeditor/ckeditor-contrib/plugins/redmine
+/newvolume/opt/bitnami/apps/redmine/scripts/redmineini.sh
+/newvolume/etc/cron.d/redmine
+/newvolume/home/bitnami/redmine-issue-templates
+/newvolume/home/bitnami/redmine-issue-templates/redmine_issue_templates-0.2.1
+/newvolume/home/bitnami/redmine-issue-templates/redmine_issue_templates-0.2.1/app/views/settings/_redmine_issue_templates.html.erb
+
+
+
+root@ip-172-31-12-165:/newvolume# du -sh /newvolume/opt/bitnami/
+4.3G    /newvolume/opt/bitnami/
+root@ip-172-31-12-165:/newvolume# du -sh /newvolume
+7.1G    /newvolume
+root@ip-172-31-12-165:/newvolume# du -sh /newvolume/opt/bitnami/apps
+3.2G    /newvolume/opt/bitnami/apps
+root@ip-172-31-12-165:/newvolume# du -sh /newvolume/opt/bitnami/apps/redmine/
+3.2G    /newvolume/opt/bitnami/apps/redmine/

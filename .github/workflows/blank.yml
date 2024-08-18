@@ -28,7 +28,7 @@ jobs:
       # Inject most recent tag into environment as VERSION
       - name: Get the version from tag
         id: version
-        run: echo git describe --tags --abbrev=0 >> $GITHUB_ENV
+        run: echo "VERSION=$(shell git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
       - uses: GeoWerkstatt/create-jira-release@v1
         with:
